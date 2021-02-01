@@ -216,6 +216,5 @@ reformat() {
   [ "$fs_for_container" == "4" ] && mkfs.vfat -f /dev/mapper/secret_container
   [ "$fs_for_container" == "5" ] && mkfs.ntfs -f /dev/mapper/secret_container
 }
-set -e
 user_check
 menu
