@@ -218,3 +218,4 @@ reformat() {
 }
 user_check
 menu
+clear
