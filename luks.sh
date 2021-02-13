@@ -193,6 +193,7 @@ fs1() {
   [ "$fs_for_container" == "3" ] && mkfs.exfat /dev/mapper/secret_container
   [ "$fs_for_container" == "4" ] && mkfs.vfat /dev/mapper/secret_container
   [ "$fs_for_container" == "5" ] && mkfs.ntfs /dev/mapper/secret_container
+  mount /dev/mapper/secret_container /mnt && chmod -R /mnt && umount /mnt
 }
 container() {
   clear
