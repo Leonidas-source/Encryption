@@ -69,7 +69,7 @@ count_mount() {
 }
 count_umount() {
   clear
-  umount /dev/mapper/secret_container
+  umount folder
   menu
 }
 open_container() {
