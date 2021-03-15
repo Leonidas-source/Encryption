@@ -21,7 +21,7 @@ user_check() {
 }
 iamtoolazy() {
   clear
-  mount /dev/mapper/secret /mnt
+  mount -o rw /dev/mapper/secret /mnt
   chmod -R 777 /mnt
   umount /mnt
 }
@@ -66,7 +66,7 @@ count_mount() {
   ls | grep -w "folder" || mkdir folder
   name=$(cat conf | sed -n "1p")
   options=$(cat conf | sed -n "2p")
-  mount /dev/mapper/$name $options folder
+  mount -o rw /dev/mapper/$name $options folder
   menu
 }
 count_umount() {
@@ -203,7 +203,7 @@ fs1() {
   [ "$fs_for_container" == "3" ] && mkfs.exfat /dev/mapper/$answr3
   [ "$fs_for_container" == "4" ] && mkfs.vfat /dev/mapper/$answr3
   [ "$fs_for_container" == "5" ] && mkfs.ntfs /dev/mapper/$answr3
-  mount /dev/mapper/$answr3 /mnt && chmod -R 777 /mnt && umount /mnt
+  mount -o rw /dev/mapper/$answr3 /mnt && chmod -R 777 /mnt && umount /mnt
 }
 btrfser() {
   clear
